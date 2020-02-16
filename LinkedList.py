@@ -17,10 +17,10 @@ class linked(node):
         else:
             new=node(data)
             if(self.tail.next==None):
-                self.head.next=new
                 self.tail.next=new
                 self.tail=self.tail.next
-                
+            
+    '''            
     def pr(self):
         ans=[]
         c=self.head
@@ -29,7 +29,7 @@ class linked(node):
             c=c.next
         ans.append(c.data)
         return ans
-
+    '''
 
 
     def __str__(self):
@@ -48,4 +48,10 @@ class linked(node):
 a=linked()
 a.insert(1)
 a.insert(2)
+a.insert(3)
+b=linked()
+b.insert("a")
+b.insert("b")
+b.insert("c")
+print(b)
 print(a)
