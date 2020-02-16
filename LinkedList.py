@@ -40,7 +40,7 @@ class linked(node):
             x=self.head
             while(x.next):
                 c+=str(x)
-                c+=" "
+                c+=","
                 x=x.next
             c+=str(x)
             return "["+c+"]"
