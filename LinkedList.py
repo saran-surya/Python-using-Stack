@@ -1,21 +1,21 @@
-class node:
-    def __init__(self,data):
+class node(object):
+    def __init__(self,data):      # Node Constructor
         self.data=data
         self.next=None
 
-    def __str__(self):
+    def __str__(self):           #stringifying constructor (returns a data of head or tail)
         return str(self.data)
 
 class linked(node):
-    def __init__(self):
+    def __init__(self):          # constructor for head and tail
         self.head=None 
         self.tail=None 
 
-    def insert(self,data):
+    def insert(self,data):                      #function to insert values O(1)
         if(self.head==None):
             self.head=self.tail=node(data)
         else:
-            new=node(data)
+            new=node(data)                                                    
             if(self.tail.next==None):
                 self.tail.next=new
                 self.tail=self.tail.next
@@ -25,7 +25,7 @@ class linked(node):
         ans=[]
         c=self.head
         while(c.next):
-            ans.append(c.data)
+            ans.append(c.data)                         #alternate function to print(values)  O(n)
             c=c.next
         ans.append(c.data)
         return ans
@@ -45,13 +45,9 @@ class linked(node):
             c+=str(x)
             return "["+c+"]"
 
+#Driver Function
+
 a=linked()
-a.insert(1)
-a.insert(2)
-a.insert(3)
-b=linked()
-b.insert("a")
-b.insert("b")
-b.insert("c")
-print(b)
-print(a)
+t=list(map(int,input().split()))   #input for a list
+for i in t: a.insert(i)
+print(a)                           #printing the list using the constructor __str__ in linked() 
